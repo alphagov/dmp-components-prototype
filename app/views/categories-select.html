@@ -1,0 +1,100 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Pricing</h1>
+    <form action="">
+      {{ govukSelect({
+        idPrefix: "unit",
+        name: "unit",
+        label: {
+          text: "Unit"
+        },
+        items: [
+          {
+            value: "per device",
+            text: "per device"
+          },
+          {
+            value: "per instance",
+            text: "per instance"
+          },
+          {
+            value: "per license",
+            text: "per license"
+          },
+          {
+            value: "per person",
+            text: "per person"
+          },
+          {
+            value: "per user",
+            text: "per user"
+          }
+        ]
+      }) }}
+
+      {{ govukSelect({
+        idPrefix: "time",
+        name: "time",
+        label: {
+          text: "Time (optional)"
+        },
+        items: [
+          {
+            value: "",
+            text: ""
+          },
+          {
+            value: "per second",
+            text: "per second"
+          },
+          {
+            value: "per minute",
+            text: "per minute"
+          },
+          {
+            value: "per hour",
+            text: "per hour"
+          },
+          {
+            value: "per day",
+            text: "per day"
+          },
+          {
+            value: "per week",
+            text: "per week"
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Minimum price"
+        },
+        classes: "govuk-input--width-10",
+        id: "minimum-price",
+        name: "minimum-price"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Maximum price"
+        },
+        classes: "govuk-input--width-10",
+        id: "maximum-price",
+        name: "maximum-price"
+      }) }}
+    </form>
+    </div>
+</div>
+
+{% endblock %}
